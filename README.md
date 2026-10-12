@@ -24,11 +24,16 @@ Phone testing over the LAN has two limits:
 
 ## Put it on your iPhone and Mac (free hosting with GitHub Pages)
 
-An installed PWA needs HTTPS. GitHub Pages gives you that free:
+An installed PWA needs HTTPS, which GitHub Pages provides for free. This is already set up:
 
-1. Create a GitHub repo (e.g. `repcoach`) and upload the contents of this folder. `tools/` is optional but harmless.
-2. Repo → **Settings → Pages** → Source: *Deploy from a branch*, branch `main`, folder `/ (root)`.
-3. After a minute it's live at `https://<you>.github.io/repcoach/`.
+- Repo: <https://github.com/daboneman911/betterBone> (public; Pages serves `main`, folder `/`)
+- **Live app: <https://daboneman911.github.io/betterBone/>**
+
+Pushes to `main` redeploy automatically (see *Updating* below). If a push ever doesn't trigger a deploy, run:
+
+```powershell
+gh api -X POST repos/daboneman911/betterBone/pages/builds
+```
 
 **iPhone:** open that URL in Safari → Share → **Add to Home Screen**. It launches full-screen like a native app and works offline.
 

@@ -13,7 +13,7 @@ Choose **one** option.
 **A. Delete the whole repo** (removes the code and the site):
 
 ```powershell
-gh repo delete <your-github-username>/repcoach --yes
+gh repo delete daboneman911/betterBone --yes
 ```
 
 The first time, gh asks for the extra `delete_repo` permission. Grant it with:
@@ -27,10 +27,10 @@ You can also do it on the web: repo → **Settings** → bottom of the page → 
 **B. Keep the code, stop publishing:** repo → **Settings → Pages** → **Unpublish site**. Or from the terminal:
 
 ```powershell
-gh api -X DELETE repos/<your-github-username>/repcoach/pages
+gh api -X DELETE repos/daboneman911/betterBone/pages
 ```
 
-**Check it worked:** within a few minutes, `https://<your-github-username>.github.io/repcoach/` should return a 404.
+**Check it worked:** within a few minutes, `https://daboneman911.github.io/betterBone/` should return a 404.
 
 **Copies that may outlive the site:**
 - Forks or clones other people made.
