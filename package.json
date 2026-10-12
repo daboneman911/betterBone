@@ -1,0 +1,10 @@
+{
+  "name": "repcoach",
+  "private": true,
+  "type": "module",
+  "description": "Offline-first workout planner PWA. No dependencies.",
+  "scripts": {
+    "serve": "node tools/serve.js",
+    "check": "node tools/check-planner.mjs"
+  }
+}
