@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Starts the RepCoach dev server.
+    Starts the betterBone dev server.
 
 .DESCRIPTION
     Thin wrapper around tools/serve.js so you don't need Node on PATH. Defaults to

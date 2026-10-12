@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Publishes the current RepCoach files to GitHub Pages.
+    Publishes the current betterBone files to GitHub Pages.
 
 .DESCRIPTION
     Bumps the service-worker VERSION so installed copies pick up the change, runs

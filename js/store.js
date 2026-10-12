@@ -1,5 +1,7 @@
 // Everything lives in one localStorage key. The data is small (a plan plus a log)
 // and a single synchronous blob is much simpler to back up and restore than IndexedDB.
+// 'repcoach' is the app's original name. It stays in this key, the backup
+// format and the cache names so existing installs and backups keep working.
 const KEY = 'repcoach:v1';
 
 const defaults = () => ({
@@ -49,7 +51,7 @@ export function exportJson() {
 
 export function importJson(text) {
   const parsed = JSON.parse(text);
-  if (!parsed || parsed.app !== 'repcoach' || !parsed.data) throw new Error('Not a RepCoach backup file');
+  if (!parsed || parsed.app !== 'repcoach' || !parsed.data) throw new Error('Not a betterBone backup file');
   return replaceState(parsed.data);
 }
 

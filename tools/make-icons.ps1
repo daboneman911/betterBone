@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Renders the RepCoach app icons (PNG) with System.Drawing.
+    Renders the betterBone app icons (PNG) with System.Drawing.
 
 .DESCRIPTION
     iOS ignores SVG for home-screen icons and needs a 180x180 apple-touch-icon,

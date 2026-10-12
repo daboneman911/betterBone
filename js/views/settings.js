@@ -88,14 +88,14 @@ export function render(root) {
 }
 
 async function exportBackup() {
-  const name = `repcoach-backup-${new Date().toISOString().slice(0, 10)}.json`;
+  const name = `betterbone-backup-${new Date().toISOString().slice(0, 10)}.json`;
   const blob = new Blob([exportJson()], { type: 'application/json' });
   // On iPhone the share sheet is the natural way to put a file in Files/iCloud;
   // desktop browsers fall through to a normal download.
   try {
     const file = new File([blob], name, { type: 'application/json' });
     if (navigator.canShare && navigator.canShare({ files: [file] })) {
-      await navigator.share({ files: [file], title: 'RepCoach backup' });
+      await navigator.share({ files: [file], title: 'betterBone backup' });
       return;
     }
   } catch (err) {

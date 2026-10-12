@@ -1,5 +1,5 @@
 // Bump VERSION on every deploy so installed copies pick up the new shell.
-const VERSION = 'v1';
+const VERSION = 'v20261011-2043';
 const SHELL_CACHE = `repcoach-shell-${VERSION}`;
 const IMG_CACHE = 'repcoach-img-v1'; // not versioned: the images are pinned to a commit and never change
 

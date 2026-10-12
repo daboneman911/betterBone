@@ -40,7 +40,7 @@ createServer(async (req, res) => {
     res.writeHead(code).end(code === 404 ? 'Not found' : 'Server error');
   }
 }).listen(PORT, '0.0.0.0', () => {
-  console.log(`RepCoach dev server\n  This PC:  http://localhost:${PORT}/`);
+  console.log(`betterBone dev server\n  This PC:  http://localhost:${PORT}/`);
   for (const addrs of Object.values(networkInterfaces())) {
     for (const a of addrs || []) {
       if (a.family === 'IPv4' && !a.internal) console.log(`  Phone:    http://${a.address}:${PORT}/   (same Wi-Fi; no offline mode over plain http)`);

@@ -1,4 +1,4 @@
-# RepCoach
+# betterBone
 
 A workout planner that runs on iPhone and Mac as an installable web app (PWA):
 

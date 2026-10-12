@@ -1,6 +1,6 @@
-# RepCoach teardown
+# betterBone teardown
 
-How to remove every piece of RepCoach: the published site, the copies installed on your devices, and everything set up on this PC. Do the steps in order, and skip any part you never set up.
+How to remove every piece of betterBone: the published site, the copies installed on your devices, and everything set up on this PC. Do the steps in order, and skip any part you never set up.
 
 > **Want to keep your workout history?** Do this first: open the app → Settings → **Export backup**. Each device stores its own data, and nothing below can recover it afterwards.
 
@@ -41,17 +41,17 @@ gh api -X DELETE repos/daboneman911/betterBone/pages
 
 ### iPhone
 1. *(Optional)* In the app: Settings → **Erase everything**.
-2. Long-press the RepCoach icon → **Remove App** → **Delete from Home Screen**. (On older iOS: **Delete Bookmark**.)
+2. Long-press the betterBone icon → **Remove App** → **Delete from Home Screen**. (On older iOS: **Delete Bookmark**.)
 3. Clear the leftover data: iOS **Settings → Apps → Safari → Advanced → Website Data** → search `github.io` → swipe to delete. (On older iOS: **Settings → Safari → Advanced → Website Data**.)
 
 ### Mac (Safari web app)
-1. Quit RepCoach.
-2. Finder → your home folder → **Applications** → drag **RepCoach** to the Trash. These web apps live in `~/Applications`, not `/Applications`.
+1. Quit betterBone.
+2. Finder → your home folder → **Applications** → drag **betterBone** to the Trash. These web apps live in `~/Applications`, not `/Applications`.
 3. Safari → **Settings → Privacy → Manage Website Data** → search `github.io` → **Remove**.
 
 ### Mac or PC (Chrome or Edge install)
-1. Go to `chrome://apps` (or `edge://apps`) → right-click RepCoach → **Remove**. Tick *Also clear data* if offered.
-2. If you only used it in a browser tab: site settings for the RepCoach URL → **Clear data**.
+1. Go to `chrome://apps` (or `edge://apps`) → right-click betterBone → **Remove**. Tick *Also clear data* if offered.
+2. If you only used it in a browser tab: site settings for the betterBone URL → **Clear data**.
 
 ### This PC's browser (local testing at localhost:8080)
 Open `http://localhost:8080` → DevTools (F12) → **Application** → **Storage** → **Clear site data**. This also removes the service worker and cached images.
@@ -117,7 +117,7 @@ This also deletes the local Git history. If step 1 left the GitHub repo in place
 
 ## What this doesn't touch
 
-- **`C:\Users\X\Documents\REA`** (Ghidra and the portable Node). RepCoach only *used* that Node to run the dev server and checks. Clean it up separately if you want.
+- **`C:\Users\X\Documents\REA`** (Ghidra and the portable Node). betterBone only *used* that Node to run the dev server and checks. Clean it up separately if you want.
 - **The exercise dataset and images.** They're hosted by third parties (GitHub / jsDelivr), not by you, so there's nothing to delete.
 
 ## Checklist

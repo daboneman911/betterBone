@@ -1,6 +1,6 @@
 {
-  "name": "RepCoach",
-  "short_name": "RepCoach",
+  "name": "betterBone",
+  "short_name": "betterBone",
   "description": "Personal workout plans, an exercise library filterable by body part, and a set-by-set workout player.",
   "start_url": "./#/today",
   "scope": "./",
