@@ -10,8 +10,9 @@ import * as exercise from './views/exercise.js';
 import * as workout from './views/workout.js';
 import * as progress from './views/progress.js';
 import * as settings from './views/settings.js';
+import * as bodyweight from './views/bodyweight.js';
 
-const views = { onboarding, today, plan, library, exercise, workout, progress, settings };
+const views = { onboarding, today, plan, library, exercise, workout, progress, settings, bodyweight };
 const FULLSCREEN = new Set(['onboarding', 'workout']);
 const TABS = [
   ['today', 'Today'], ['plan', 'Plan'], ['library', 'Exercises'], ['progress', 'Progress'],
@@ -36,7 +37,7 @@ function render() {
 
   tabbar.hidden = FULLSCREEN.has(view);
   document.body.dataset.view = view;
-  const activeTab = view === 'exercise' ? 'library' : view;
+  const activeTab = view === 'exercise' || view === 'bodyweight' ? 'library' : view;
   for (const a of tabbar.querySelectorAll('a')) {
     const on = a.dataset.tab === activeTab;
     a.classList.toggle('active', on);

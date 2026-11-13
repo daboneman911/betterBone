@@ -9,9 +9,9 @@ const IMG_CACHE = `${LEGACY_ID}-img-v1`; // not versioned: the images are pinned
 
 const SHELL = [
   './', 'index.html', 'styles.css', 'manifest.webmanifest',
-  'js/app.js', 'js/charts.js', 'js/constants.js', 'js/data.js', 'js/history.js', 'js/nav.js',
+  'js/app.js', 'js/bodyweight.js', 'js/charts.js', 'js/constants.js', 'js/data.js', 'js/history.js', 'js/nav.js',
   'js/planner.js', 'js/store.js', 'js/ui.js',
-  'js/views/exercise.js', 'js/views/library.js', 'js/views/onboarding.js', 'js/views/plan.js',
+  'js/views/bodyweight.js', 'js/views/exercise.js', 'js/views/library.js', 'js/views/onboarding.js', 'js/views/plan.js',
   'js/views/progress.js', 'js/views/settings.js', 'js/views/today.js', 'js/views/workout.js',
   'data/exercises.json',
   'icons/icon-192.png', 'icons/apple-touch-icon.png',

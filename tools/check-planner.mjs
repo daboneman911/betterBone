@@ -4,6 +4,7 @@
 import { readFileSync } from 'node:fs';
 import { buildPlan, estimateSeconds, slotPoolWithFallback as slotPool } from '../js/planner.js';
 import { EQUIPMENT_OPTIONS, BODY_PARTS } from '../js/constants.js';
+import { BW_WORKOUTS, bodyweightIds, buildBodyweightDay } from '../js/bodyweight.js';
 
 const all = JSON.parse(readFileSync(new URL('../data/exercises.json', import.meta.url), 'utf8'));
 
@@ -31,6 +32,24 @@ for (const focus of [[], ['glutes'], ['arms', 'core']]) {
     lengths.push(mins / minutes);
     if (mins > minutes * 1.6) problems.push(`${tag} ${day.name}: ~${mins.toFixed(0)} min vs ${minutes} budget`);
   }
+}
+
+// The bodyweight section is hand-picked: every id must exist and need no equipment,
+// and each quick workout should build a full session at every level and goal.
+const byId = new Map(all.map(e => [e.id, e]));
+for (const id of bodyweightIds()) {
+  const e = byId.get(id);
+  if (!e) problems.push(`bodyweight: unknown exercise id ${id}`);
+  else if (e.equipment !== 'body only') problems.push(`bodyweight: ${id} needs ${e.equipment}`);
+}
+for (const goal of ['lose', 'muscle', 'fit'])
+for (const level of ['beginner', 'intermediate', 'expert'])
+for (const w of BW_WORKOUTS) {
+  const day = buildBodyweightDay(w, { goal, level }, id => byId.get(id));
+  const main = day.items.filter(i => i.kind === 'main');
+  const ids = day.items.map(i => i.id);
+  if (main.length !== w.items.length) problems.push(`bodyweight ${w.id} ${goal}/${level}: ${main.length}/${w.items.length} exercises`);
+  if (new Set(ids).size !== ids.length) problems.push(`bodyweight ${w.id} ${goal}/${level}: duplicate exercise`);
 }
 
 // Which slots can come up empty for the most restricted user?

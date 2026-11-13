@@ -40,14 +40,15 @@ function beep(freq, ms) {
 }
 
 // ---- starting --------------------------------------------------------------
-export async function startWorkout(dayIndex) {
+// `day` overrides the plan lookup for one-off sessions (e.g. bodyweight
+// workouts); pass dayIndex null so finishing doesn't advance the plan.
+export async function startWorkout(dayIndex, day = state.plan.days[dayIndex]) {
   unlockAudio();
   if (state.active) {
     const ok = await confirmSheet(`“${state.active.dayName}” is still in progress. Discard it and start a new workout?`,
       { ok: 'Discard & start', danger: true });
     if (!ok) return;
   }
-  const day = state.plan.days[dayIndex];
   state.active = {
     startedAt: Date.now(),
     dayIndex,

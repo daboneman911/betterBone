@@ -152,6 +152,8 @@ body[data-view="workout"] .page { padding-bottom: calc(32px + env(safe-area-inse
 .ex-text strong { font-weight: 600; overflow: hidden; text-overflow: ellipsis; }
 .ex-row { display: flex; align-items: center; gap: 2px; }
 .ex-row .ex-link { flex: 1; }
+.bw-promo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.bw-promo .icon { color: var(--muted); }
 .thumb { width: 56px; height: 56px; border-radius: 10px; object-fit: cover; background: var(--surface-2); flex-shrink: 0; }
 .thumb-empty { background: var(--surface-2); }
 .empty-row { padding: 24px 0; text-align: center; }

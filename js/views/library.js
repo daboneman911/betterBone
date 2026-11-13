@@ -62,6 +62,11 @@ export function render(root, arg) {
   root.innerHTML = `
     <div class="page">
       <header class="topbar"><h1>Exercises</h1></header>
+      <a class="card bw-promo" href="#/bodyweight">
+        <span class="ex-text"><strong>Bodyweight</strong>
+          <span class="muted small">No equipment · legs, glutes &amp; hips, chest · quick workouts</span></span>
+        ${icon('chevron', 18)}
+      </a>
       <div class="search">${icon('search', 18)}<input type="search" id="q" placeholder="Search ${all.length} exercises" value="${esc(f.q)}" aria-label="Search exercises" autocomplete="off"></div>
       <div class="chips scroll" id="parts" role="group" aria-label="Body part"></div>
       <div class="chips scroll sub" id="muscles" role="group" aria-label="Muscle"></div>
