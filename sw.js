@@ -1,7 +1,11 @@
 // Bump VERSION on every deploy so installed copies pick up the new shell.
 const VERSION = 'v20261011-2043';
-const SHELL_CACHE = `repcoach-shell-${VERSION}`;
-const IMG_CACHE = 'repcoach-img-v1'; // not versioned: the images are pinned to a commit and never change
+// 'repcoach' is the app's original name. It stays in the cache names so the
+// activate step still finds and deletes caches made by older installs.
+const LEGACY_ID = 'repcoach';
+const SHELL_PREFIX = `${LEGACY_ID}-shell-`;
+const SHELL_CACHE = `${SHELL_PREFIX}${VERSION}`;
+const IMG_CACHE = `${LEGACY_ID}-img-v1`; // not versioned: the images are pinned to a commit and never change
 
 const SHELL = [
   './', 'index.html', 'styles.css', 'manifest.webmanifest',
@@ -20,7 +24,7 @@ self.addEventListener('install', event => {
 self.addEventListener('activate', event => {
   event.waitUntil((async () => {
     for (const key of await caches.keys()) {
-      if (key.startsWith('repcoach-shell-') && key !== SHELL_CACHE) await caches.delete(key);
+      if (key.startsWith(SHELL_PREFIX) && key !== SHELL_CACHE) await caches.delete(key);
     }
     await self.clients.claim();
   })());

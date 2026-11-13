@@ -1,8 +1,10 @@
 // Everything lives in one localStorage key. The data is small (a plan plus a log)
 // and a single synchronous blob is much simpler to back up and restore than IndexedDB.
-// 'repcoach' is the app's original name. It stays in this key, the backup
-// format and the cache names so existing installs and backups keep working.
-const KEY = 'repcoach:v1';
+// 'repcoach' is the app's original name. It stays in this key and the backup
+// format (and in sw.js's cache names) so existing installs and backups keep working.
+// Don't rename it: old data and old backup files would stop loading.
+const LEGACY_ID = 'repcoach';
+const KEY = `${LEGACY_ID}:v1`;
 
 const defaults = () => ({
   profile: null,       // quiz answers
@@ -46,12 +48,12 @@ export function replaceState(next) {
 }
 
 export function exportJson() {
-  return JSON.stringify({ app: 'repcoach', version: 1, exportedAt: new Date().toISOString(), data: state }, null, 2);
+  return JSON.stringify({ app: LEGACY_ID, version: 1, exportedAt: new Date().toISOString(), data: state }, null, 2);
 }
 
 export function importJson(text) {
   const parsed = JSON.parse(text);
-  if (!parsed || parsed.app !== 'repcoach' || !parsed.data) throw new Error('Not a betterBone backup file');
+  if (!parsed || parsed.app !== LEGACY_ID || !parsed.data) throw new Error('Not a betterBone backup file');
   return replaceState(parsed.data);
 }
 

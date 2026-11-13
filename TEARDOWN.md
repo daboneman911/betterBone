@@ -41,12 +41,12 @@ gh api -X DELETE repos/daboneman911/betterBone/pages
 
 ### iPhone
 1. *(Optional)* In the app: Settings → **Erase everything**.
-2. Long-press the betterBone icon → **Remove App** → **Delete from Home Screen**. (On older iOS: **Delete Bookmark**.)
+2. Long-press the betterBone icon (it may still say **RepCoach** if you added it before the rename) → **Remove App** → **Delete from Home Screen**. (On older iOS: **Delete Bookmark**.)
 3. Clear the leftover data: iOS **Settings → Apps → Safari → Advanced → Website Data** → search `github.io` → swipe to delete. (On older iOS: **Settings → Safari → Advanced → Website Data**.)
 
 ### Mac (Safari web app)
-1. Quit betterBone.
-2. Finder → your home folder → **Applications** → drag **betterBone** to the Trash. These web apps live in `~/Applications`, not `/Applications`.
+1. Quit betterBone (or RepCoach, if you added it to the Dock before the rename).
+2. Finder → your home folder → **Applications** → drag **betterBone** (or **RepCoach**) to the Trash. These web apps live in `~/Applications`, not `/Applications`.
 3. Safari → **Settings → Privacy → Manage Website Data** → search `github.io` → **Remove**.
 
 ### Mac or PC (Chrome or Edge install)
